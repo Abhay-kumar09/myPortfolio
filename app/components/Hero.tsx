@@ -26,7 +26,7 @@ const Hero = () => {
             })
 
             gsap.set('.hero-header h1', { opacity: 1 })
-            gsap.set(split.words, { overflow: 'hidden', display: 'inline-flex' })
+            gsap.set(split.words, { overflow: 'hidden', display: 'block' })
             gsap.set(split.chars, { y: "100%", autoAlpha: 0 })
 
             const tl = gsap.timeline()
@@ -153,7 +153,7 @@ const Hero = () => {
             {/* =============================
           🖼️ IMAGES
       ============================== */}
-            <div className="hero-images absolute top-[50%] w-full -translate-y-1/2 px-4 md:px-8 flex flex-row flex-wrap md:flex-nowrap justify-center items-center gap-[5vw] will-change-[gap]">
+            <div className="hero-images absolute z-22 top-[50%] w-full -translate-y-1/2 px-4 md:px-8 flex flex-row flex-wrap md:flex-nowrap justify-center items-center gap-[5vw] will-change-[gap]">
 
                 <Image className='img w-[20vw] md:w-[15vw] h-[30vh] object-cover rounded-md'
                     src={'/preloader1-scaled.jpg'} width={300} height={400} alt='img1' priority />
@@ -175,8 +175,8 @@ const Hero = () => {
             {/* =============================
           🧠 TITLE
       ============================== */}
-            <div className="hero-header absolute bottom-12 w-full z-20 pointer-events-none px-4">
-                <h1 className='uppercase text-center text-[12vw] md:text-[8vw] font-bold tracking-tighter leading-none m-0 text-white drop-shadow-md opacity-0'>
+            <div className="hero-header absolute bottom-2 w-full z-20 pointer-events-none px-4">
+                <h1 className='uppercase text-center text-[15vw] font-bold tracking-tighter leading-none m-0 text-white drop-shadow-md opacity-0'>
                     Abhay Kumar
                 </h1>
             </div>
