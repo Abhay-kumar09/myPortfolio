@@ -1,20 +1,16 @@
 'use client'
-
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { CustomEase } from 'gsap/CustomEase'
 import SplitType from 'split-type'
 
-if (typeof window !== 'undefined') {
-    gsap.registerPlugin(CustomEase)
-    CustomEase.create("hop", "0.87, 0, 0.13, 1")
-}
-
 const Hero = () => {
     const containerRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
+        gsap.registerPlugin(CustomEase)
+        CustomEase.create("hop", "0.87, 0, 0.13, 1")
         const ctx = gsap.context(() => {
 
             // ✅ INITIAL STATE (images visible from start)
