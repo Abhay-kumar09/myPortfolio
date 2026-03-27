@@ -91,6 +91,15 @@ const Hero = () => {
                 ease: "power2.inOut",
                 onComplete: () => {
                     gsap.set('.hero-overlay', { display: 'none' })
+
+                    const scrollY = document.body.style.top
+                    document.body.style.position = 'relative'
+                    document.body.style.top = ''
+                    document.body.style.left = ''
+                    document.body.style.right = ''
+                    document.body.style.width = ''
+
+                    window.scrollTo(0, parseInt(scrollY || '0') * -1)
                 }
             }, "start+=2")
 
