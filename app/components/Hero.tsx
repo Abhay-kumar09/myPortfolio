@@ -100,6 +100,9 @@ const Hero = () => {
                     document.body.style.width = ''
 
                     window.scrollTo(0, parseInt(scrollY || '0') * -1)
+
+                    // Refresh layout for any elements dependent on body scroll/height (e.g. ScrollTrigger)
+                    setTimeout(() => window.dispatchEvent(new Event('resize')), 100)
                 }
             }, "start+=2")
 
