@@ -54,7 +54,7 @@ const TextBlock = () => {
       <div className="main-container">
         <h3 className='text-[7rem] font-normal leading-tight'>
           I am a creative director with a passion for fashion, design and
-          cosmetics, transforming trends into unforgettable campaigns.
+          cosmetics, transforming trends into unforgettable campaign.
         </h3>
       </div>
     </section>
