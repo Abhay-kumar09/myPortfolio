@@ -51,31 +51,23 @@ const Marquee: FC<Props> = ({ isReversed = false, className }) => {
       timeline.current = gsap.timeline({
         defaults: { ease: "none" },
         repeat: -1,
-        paused: true, // 👈 important (start only when triggered)
+        paused: true,
         scrollTrigger: {
           trigger: el,
-          start: "top 80%",   // when enters viewport
-          end: "bottom 20%",
-          once: true,
+          start: "top bottom",
+          end: "bottom top",
           onEnter: () => timeline.current?.play(),
           onLeave: () => timeline.current?.pause(),
           onEnterBack: () => timeline.current?.play(),
           onLeaveBack: () => timeline.current?.pause(),
         },
-      })
-        .to(el, {
-          xPercent: isReversed ? 0 : -50,
-          duration: 20,
-        })
-        .set(el, { xPercent: 0 });
+      }).to(el, {
+        xPercent: isReversed ? 0 : -50,
+        duration: 20,
+      });
     };
 
     setupInfiniteMarqueeTimeline();
-
-    return () => {
-      timeline.current?.kill();
-      ScrollTrigger.getAll().forEach(t => t.kill()); // cleanup
-    };
   }, { dependencies: [isReversed] });
 
   const timelineTimeScaleTween = useRef<GSAPTween | null>(null);
