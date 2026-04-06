@@ -5,57 +5,74 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitType from 'split-type'
 
-const TextBlock = () => {
+type TextItem = {
+  text: string
+}
+
+type TextBlockProps = {
+  data: TextItem[]
+}
+
+const TextBlock: React.FC<TextBlockProps> = ({ data }) => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
+    const splits: SplitType[] = []
+
     const ctx = gsap.context(() => {
+      const headings = gsap.utils.toArray<HTMLHeadingElement>('h3')
 
-      // ✅ Split text
-      const split = new SplitType('.textblock h3', {
-      types: 'words,chars'
+      headings.forEach((heading) => {
+        const split = new SplitType(heading, {
+          types: 'words,chars'
+        })
+
+        splits.push(split)
+
+        gsap.set(split.words, {
+          overflow: 'hidden',
+          display: 'inline-block'
+        })
+
+        gsap.set(split.chars, {
+          yPercent: 100,
+          opacity: 0
+        })
+
+        gsap.to(split.chars, {
+          yPercent: 0,
+          opacity: 1,
+          stagger: 0.02,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: heading,
+            start: 'top 60%',
+            toggleActions: 'play none none none',
+          }
+        })
       })
-
-      // ✅ Initial state (hidden below)
-      gsap.set(split.chars, {
-        y: '100%',
-        autoAlpha: 0
-      })
-
-      gsap.set(split.words, {
-        overflow: 'hidden',
-        display: 'inline-block'
-      })
-
-      // ✅ Scroll animation
-      gsap.to(split.chars, {
-        y: '0%',
-        autoAlpha: 1,
-        stagger: 0.02,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',   // when section enters
-          end: 'top 30%',
-          toggleActions: 'play none none none',
-        }
-      })
-
     }, containerRef)
 
-    return () => ctx.revert()
-  }, [])
+    return () => {
+      ctx.revert()
+      splits.forEach((split) => split.revert())
+    }
+  }, [data]) // ✅ re-run if data changes
 
   return (
-    <section ref={containerRef} className='textblock py-25 overflow-hidden'>
-      <div className="main-container">
-        <h3 className='text-[7rem] font-normal leading-tight'>
-          I am a creative director with a passion for fashion, design and
-          cosmetics, transforming trends into unforgettable campaign.
-        </h3>
+    <section ref={containerRef} className="textblock py-25 overflow-hidden">
+      <div className="main-container space-y-10">
+        {data.map((item, i) => (
+          <h3
+            key={i}
+            className="text-[7rem] font-normal leading-tight"
+          >
+            {item.text}
+          </h3>
+        ))}
       </div>
     </section>
   )

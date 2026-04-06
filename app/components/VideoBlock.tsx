@@ -12,8 +12,8 @@ const VideoBlock = () => {
 
     useGSAP(() => {
         gsap.to(containerRef.current, {
-            width: "80vw",
-            height: "80vh",
+            width: "90vw",
+            height: "90vh",
             borderRadius: "0px",
             ease: "none",
             scrollTrigger: {
@@ -26,10 +26,10 @@ const VideoBlock = () => {
     });
 
     return (
-        <section className="mx-auto py-[150px] flex justify-center items-center w-full overflow-hidden">
+        <section className="mx-auto py-37.5 flex justify-center items-center w-full overflow-hidden">
             <div
                 ref={containerRef}
-                className="w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] rounded-3xl overflow-hidden relative"
+                className="w-75 h-75 sm:w-200 sm:h-100 rounded-3xl overflow-hidden relative"
             >
                 <video
                     src="/video.mp4"
