@@ -91,7 +91,7 @@ const GuidingPrinciples = () => {
             {/* Header */}
             <div className="text-center mb-24 flex flex-col items-center">
                 <h2 className="text-5xl md:text-7xl font-serif leading-tight">
-                    Projects
+                    Our Guiding Principles
                 </h2>
                 {/* The Moving Torch */}
                 <div

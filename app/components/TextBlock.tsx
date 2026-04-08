@@ -68,7 +68,7 @@ const TextBlock: React.FC<TextBlockProps> = ({ data }) => {
         {data.map((item, i) => (
           <h3
             key={i}
-            className="text-[7rem] font-normal leading-tight"
+            className="text-[4vw] font-normal leading-tight"
           >
             {item.text}
           </h3>
