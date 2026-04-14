@@ -33,7 +33,7 @@ const Projects = () => {
     return (
         <section className="bg-black text-white py-32 px-6 md:px-10">
             {/* Griflan uses extremely wide containers for their site-max layout */}
-            <div className="max-w-[1500px] mx-auto">
+            <div className="container">
 
                 {/* HEADER */}
                 <div className="relative mb-24 border-b border-white/10 pb-10">

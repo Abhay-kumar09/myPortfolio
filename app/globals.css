@@ -65,3 +65,93 @@ h3{
   display: inline-block;
   overflow: hidden;
 }
+
+.button{
+  pointer-events: auto;
+  cursor: pointer;
+  background: transparent;
+  border:none;
+  padding: 1.5rem 3rem;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.button--bestia{
+ color: var(--background);
+ background:none;
+ width: 40rem;
+ height: 10rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.button_bg{
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: transform .4s cubic-bezier(.1, 0, .3, 1);
+  border-radius: 300px;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+
+.button_bg::before{
+  content: '';
+  position: absolute;
+  background: #fff;
+  z-index: 1;
+  width: 110%;
+  height: 0;
+  padding-bottom: 110%;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 1);
+}
+
+.button--bestia::after{
+  content: '';
+  position: absolute;
+  background: #fff;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.button--bestia .content-holder span{
+  transition: .5s;
+}
+
+.button--bestia span{
+  display: block;
+  position: relative;
+  mix-blend-mode: difference;
+}
+
+.button--bestia:hover .button_bg{
+    transform: scale3d(1.2, 1.2, 1);
+}
+
+.button--bestia:hover .button_bg::before{
+    transition: transform .4s cubic-bezier(.1, 0, .3, 1);
+    transform: translate3d(-50%, -50%, 0) scaleX(1);
+}
+
+.button--bestia:hover .button_bg::after{
+  opacity: 1;
+  transition-duration: .01s;
+  transition-delay: .3s;
+}
+
+.button--bestia:hover .content-holder span{
+  transform: translateY(-100%);
+}

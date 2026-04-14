@@ -4,6 +4,7 @@ import Marquee from "./components/Marquee";
 import VideoBlock from "./components/VideoBlock";
 import GuidingPrinciples from "./components/GuidingPrinciples";
 import Projects from "./components/Projects"
+import Cta from "./components/Cta";
 
 export default function Home() {
   const textData = [
@@ -21,6 +22,7 @@ export default function Home() {
       <TextBlock data={boxdata} />
       <GuidingPrinciples />
       <Projects />
+      <Cta />
     </>
   );
 }
