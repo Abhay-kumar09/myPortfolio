@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+const helvetica = { className: "font-sans" };
 import "./globals.css";
 import { Header } from "./components/Header";
+import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Homepage - Abhay Kumar",
@@ -26,11 +18,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${helvetica.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );

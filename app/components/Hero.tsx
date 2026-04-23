@@ -188,7 +188,7 @@ const Hero = () => {
           🧠 TITLE
       ============================== */}
             <div className="hero-header absolute bottom-2 w-full z-20 pointer-events-none px-4">
-                <h1 className='uppercase text-center text-[15vw] font-bold tracking-tighter leading-none m-0 text-white drop-shadow-md opacity-0'>
+                <h1 className= 'uppercase text-center text-[15vw] font-bold tracking-tighter leading-none m-0 text-white drop-shadow-md opacity-0'>
                     Abhay Kumar
                 </h1>
             </div>

@@ -5,7 +5,6 @@ import VideoBlock from "./components/VideoBlock";
 import GuidingPrinciples from "./components/GuidingPrinciples";
 import Projects from "./components/Projects"
 import Cta from "./components/Cta";
-import Footer from "./components/Footer";
 
 export default function Home() {
   const textData = [
@@ -24,7 +23,6 @@ export default function Home() {
       <GuidingPrinciples />
       <Projects />
       <Cta />
-      <Footer />
     </>
   );
 }

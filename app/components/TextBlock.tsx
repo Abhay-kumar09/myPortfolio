@@ -4,6 +4,7 @@ import React, { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitType from 'split-type'
+import { editorial } from '@/lib/fonts/page'
 
 type TextItem = {
   text: string
@@ -68,7 +69,7 @@ const TextBlock: React.FC<TextBlockProps> = ({ data }) => {
         {data.map((item, i) => (
           <h3
             key={i}
-            className="text-[4vw] font-normal leading-tight"
+            className={`${editorial.className} text-[4vw] font-normal leading-tight`}
           >
             {item.text}
           </h3>
