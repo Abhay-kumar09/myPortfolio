@@ -99,16 +99,14 @@ const Marquee: FC<Props> = ({ isReversed = false, className }) => {
             <div
               key={index}
               className={twJoin(
-                "relative flex shrink-0 items-center justify-center",
+                "relative flex shrink-0 items-center justify-center h-8 md:h-12 w-auto",
                 isLast && "mr-10"
               )}
-              style={{ height: src.height, width: src.width }}
             >
               <Image
                 src={src}
                 alt="technologies icon"
-                height={40}
-                className="object-contain"
+                className="h-full w-auto object-contain"
               />
             </div>
           );

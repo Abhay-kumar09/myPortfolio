@@ -155,8 +155,8 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="counter absolute right-8 bottom-8 text-white">
-                    <h1 className='text-[4rem] md:text-[8rem] font-medium leading-none m-0'>0</h1>
+                <div className="counter absolute right-4 bottom-4 md:right-8 md:bottom-8 text-white">
+                    <h1 className='text-[3rem] md:text-[8rem] font-medium leading-none m-0'>0</h1>
                 </div>
             </div>
 
@@ -165,19 +165,19 @@ const Hero = () => {
       ============================== */}
             <div className="hero-images absolute z-22 top-[50%] w-full -translate-y-1/2 px-4 md:px-8 flex flex-row flex-wrap md:flex-nowrap justify-center items-center gap-[5vw] will-change-[gap]">
 
-                <Image className='img w-[20vw] md:w-[15vw] h-[30vh] object-cover rounded-md'
+                <Image className='img w-[25vw] md:w-[15vw] h-[20vh] md:h-[30vh] object-cover rounded-md'
                     src={'/preloader1-scaled.jpg'} width={300} height={400} alt='img1' priority />
 
-                <Image className='img w-[20vw] md:w-[15vw] h-[30vh] object-cover rounded-md'
+                <Image className='img w-[25vw] md:w-[15vw] h-[20vh] md:h-[30vh] object-cover rounded-md'
                     src={'/preloader2-scaled.jpg'} width={300} height={400} alt='img2' />
 
-                <Image className='img hero-img w-[40vw] md:w-[20vw] h-[40vh] object-cover rounded-md z-10'
+                <Image className='img hero-img w-[50vw] md:w-[20vw] h-[30vh] md:h-[40vh] object-cover rounded-md z-10'
                     src={'/preloader3-scaled.jpg'} width={400} height={500} alt='hero' priority />
 
-                <Image className='img w-[20vw] md:w-[15vw] h-[30vh] object-cover rounded-md'
+                <Image className='img w-[25vw] md:w-[15vw] h-[20vh] md:h-[30vh] object-cover rounded-md'
                     src={'/preloader4-scaled.jpg'} width={300} height={400} alt='img4' />
 
-                <Image className='img w-[20vw] md:w-[15vw] h-[30vh] object-cover rounded-md'
+                <Image className='img w-[25vw] md:w-[15vw] h-[20vh] md:h-[30vh] object-cover rounded-md'
                     src={'/preloader5-scaled.jpg'} width={300} height={400} alt='img5' />
 
             </div>
@@ -185,8 +185,8 @@ const Hero = () => {
             {/* =============================
           🧠 TITLE
       ============================== */}
-            <div className="hero-header absolute bottom-2 w-full z-20 pointer-events-none px-4">
-                <h1 className='uppercase text-center text-[15vw] font-bold tracking-tighter leading-none m-0 text-white drop-shadow-md opacity-0'>
+            <div className="hero-header absolute bottom-10 md:bottom-2 w-full z-20 pointer-events-none px-4">
+                <h1 className='uppercase text-center text-[18vw] md:text-[15vw] font-bold tracking-tighter leading-none m-0 text-white drop-shadow-md opacity-0'>
                     Abhay Kumar
                 </h1>
             </div>

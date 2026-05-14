@@ -10,8 +10,8 @@ const Cta = () => {
                   <Link href="mailto:abhaydec48@gmail.com" className="button button--bestia">
                     <div className="button_bg"></div>
                      <div className="content-holder block relative overflow-hidden">
-                        <span className={`${editorial.className} first text-[40px] text-center text-[#fff]`}>Let’s Talk</span>
-                        <span className={`${editorial.className} second absolute! text-[40px] top-full text-center `}>Let’s Talk</span>
+                        <span className={`${editorial.className} first text-[24px] md:text-[40px] text-center text-[#fff]`}>Let’s Talk</span>
+                        <span className={`${editorial.className} second absolute! text-[24px] md:text-[40px] top-full text-center `}>Let’s Talk</span>
                      </div>
                   </Link>
                </div>

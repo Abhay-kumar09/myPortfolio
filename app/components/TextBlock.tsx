@@ -69,7 +69,7 @@ const TextBlock: React.FC<TextBlockProps> = ({ data }) => {
         {data.map((item, i) => (
           <h3
             key={i}
-            className={`${editorial.className} text-[4vw] font-normal leading-tight`}
+            className={`${editorial.className} text-[2rem] md:text-[4vw] font-normal leading-tight`}
           >
             {item.text}
           </h3>

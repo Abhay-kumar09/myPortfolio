@@ -29,7 +29,7 @@ const VideoBlock = () => {
         <section className="mx-auto py-37.5 flex justify-center items-center w-full overflow-hidden">
             <div
                 ref={containerRef}
-                className="w-75 h-75 sm:w-200 sm:h-100 rounded-3xl overflow-hidden relative"
+                className="w-75 h-75 sm:w-200 sm:h-100 max-w-[90vw] rounded-3xl overflow-hidden relative"
             >
                 <video
                     src="/video.mp4"

@@ -86,11 +86,11 @@ const GuidingPrinciples = () => {
     }, [])
 
     return (
-        <section ref={sectionRef} className="bg-black text-[#dcdcdc] py-32 px-10 relative overflow-hidden cursor-crosshair">
+        <section ref={sectionRef} className="bg-black text-[#dcdcdc] py-20 md:py-32 px-6 md:px-10 relative overflow-hidden cursor-crosshair">
 
             {/* Header */}
             <div className="text-center mb-24 flex flex-col items-center">
-                <h2 className="text-5xl md:text-7xl font-serif leading-tight">
+                <h2 className="text-4xl md:text-7xl font-serif leading-tight">
                     Our Guiding Principles
                 </h2>
                 {/* The Moving Torch */}
@@ -113,17 +113,17 @@ const GuidingPrinciples = () => {
                         <div
                             key={i}
                             ref={(el) => { cardsRef.current[i] = el }}
-                            className="principle-item border-t border-white/10 py-16 flex flex-col md:flex-row justify-between items-start opacity-20 hover:opacity-100 transition-opacity"
+                            className="principle-item border-t border-white/10 py-10 md:py-16 flex flex-col md:flex-row justify-between items-start opacity-20 hover:opacity-100 transition-opacity"
                         >
                             <div className="flex gap-4">
-                                <span className="text-sm md:text-md mt-2 text-gray-500 font-mono">
+                                <span className="text-xs md:text-md mt-2 text-gray-500 font-mono">
                                     {String(i + 1).padStart(2, '0')}
                                 </span>
-                                <h3 className="text-5xl md:text-6xl font-serif">
+                                <h3 className="text-3xl md:text-6xl font-serif">
                                     {item.title}
                                 </h3>
                             </div>
-                            <p className="max-w-sm lg:max-w-xl text-xl font-light mt-6 md:mt-2 text-gray-400 leading-relaxed md:text-right">
+                            <p className="max-w-sm lg:max-w-xl text-lg md:text-xl font-light mt-4 md:mt-2 text-gray-400 leading-relaxed md:text-right">
                                 {item.desc}
                             </p>
                         </div>
