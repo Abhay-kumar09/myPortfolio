@@ -6,9 +6,12 @@
   --black: #000
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   background: var(--black);
-  position: fixed;
   color: var(--background);
   /* font-family: Arial, Helvetica, sans-serif; */
 }
@@ -27,7 +30,7 @@ img {
   padding: 0 20px;
 }
 
-.main-container{
+.main-container {
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -44,7 +47,7 @@ p {
   color: var(--background)
 }
 
-h3{
+h3 {
   line-height: 1;
 }
 
@@ -66,28 +69,28 @@ h3{
   overflow: hidden;
 }
 
-.button{
+.button {
   pointer-events: auto;
   cursor: pointer;
   background: transparent;
-  border:none;
+  border: none;
   padding: 1.5rem 3rem;
   margin: 0;
   position: relative;
   display: inline-block;
 }
 
-.button--bestia{
- color: var(--background);
- background:none;
- width: 40rem;
- height: 10rem;
- display: flex;
- align-items: center;
- justify-content: center;
+.button--bestia {
+  color: var(--background);
+  background: none;
+  width: 40rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.button_bg{
+.button_bg {
   top: 0;
   left: 0;
   position: absolute;
@@ -100,7 +103,7 @@ h3{
   overflow: hidden;
 }
 
-.button_bg::before{
+.button_bg::before {
   content: '';
   position: absolute;
   background: #fff;
@@ -114,7 +117,7 @@ h3{
   transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 1);
 }
 
-.button--bestia::after{
+.button--bestia::after {
   content: '';
   position: absolute;
   background: #fff;
@@ -127,31 +130,31 @@ h3{
   transition: opacity .3s;
 }
 
-.button--bestia .content-holder span{
+.button--bestia .content-holder span {
   transition: .5s;
 }
 
-.button--bestia span{
+.button--bestia span {
   display: block;
   position: relative;
   mix-blend-mode: difference;
 }
 
-.button--bestia:hover .button_bg{
-    transform: scale3d(1.2, 1.2, 1);
+.button--bestia:hover .button_bg {
+  transform: scale3d(1.2, 1.2, 1);
 }
 
-.button--bestia:hover .button_bg::before{
-    transition: transform .4s cubic-bezier(.1, 0, .3, 1);
-    transform: translate3d(-50%, -50%, 0) scaleX(1);
+.button--bestia:hover .button_bg::before {
+  transition: transform .4s cubic-bezier(.1, 0, .3, 1);
+  transform: translate3d(-50%, -50%, 0) scaleX(1);
 }
 
-.button--bestia:hover .button_bg::after{
+.button--bestia:hover .button_bg::after {
   opacity: 1;
   transition-duration: .01s;
   transition-delay: .3s;
 }
 
-.button--bestia:hover .content-holder span{
+.button--bestia:hover .content-holder span {
   transform: translateY(-100%);
 }

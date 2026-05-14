@@ -32,7 +32,7 @@ export const Header = () => {
     }, [])
 
     return (
-        <header ref={headerRef} className='fixed w-full z-[100]'>
+        <header ref={headerRef} className='fixed inset-x-0 top-0 w-full z-[100]'>
             <div className="container">
                 <div className="wrapper py-[1rem] flex justify-between items-start">
                     <div className="logo-wrap">

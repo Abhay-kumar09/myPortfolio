@@ -29,7 +29,20 @@ const Hero = () => {
             gsap.set(split.words, { overflow: 'hidden', display: 'block' })
             gsap.set(split.chars, { y: "100%", autoAlpha: 0 })
 
-            const tl = gsap.timeline()
+            // LOCK SCROLL BEFORE ANIMATION STARTS
+            const savedScrollY = window.scrollY;
+            document.body.style.overflow = 'hidden'; // lock scrolling during animation
+
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    window.scrollTo(0, savedScrollY);
+                    // Reset overflow to re‑enable scrolling
+                    document.body.style.overflow = '';
+                    // Hide overlay and trigger layout refresh
+                    gsap.set('.hero-overlay', { display: 'none' });
+                    window.dispatchEvent(new Event('resize'));
+                }
+            })
             const counter = document.querySelector('.counter h1')
 
             // =============================
@@ -89,21 +102,6 @@ const Hero = () => {
                 opacity: 0,
                 duration: 2,
                 ease: "power2.inOut",
-                onComplete: () => {
-                    gsap.set('.hero-overlay', { display: 'none' })
-
-                    const scrollY = document.body.style.top
-                    document.body.style.position = 'relative'
-                    document.body.style.top = ''
-                    document.body.style.left = ''
-                    document.body.style.right = ''
-                    document.body.style.width = ''
-
-                    window.scrollTo(0, parseInt(scrollY || '0') * -1)
-
-                    // Refresh layout for any elements dependent on body scroll/height (e.g. ScrollTrigger)
-                    setTimeout(() => window.dispatchEvent(new Event('resize')), 100)
-                }
             }, "start+=2")
 
             // =============================
@@ -188,7 +186,7 @@ const Hero = () => {
           🧠 TITLE
       ============================== */}
             <div className="hero-header absolute bottom-2 w-full z-20 pointer-events-none px-4">
-                <h1 className= 'uppercase text-center text-[15vw] font-bold tracking-tighter leading-none m-0 text-white drop-shadow-md opacity-0'>
+                <h1 className='uppercase text-center text-[15vw] font-bold tracking-tighter leading-none m-0 text-white drop-shadow-md opacity-0'>
                     Abhay Kumar
                 </h1>
             </div>
