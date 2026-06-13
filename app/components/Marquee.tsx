@@ -70,25 +70,6 @@ const Marquee: FC<Props> = ({ isReversed = false, className }) => {
     setupInfiniteMarqueeTimeline();
   }, { dependencies: [isReversed] });
 
-  const timelineTimeScaleTween = useRef<GSAPTween | null>(null);
-
-  const onPointerEnter = () => {
-    if (!timeline.current) return;
-    timelineTimeScaleTween.current?.kill();
-    timelineTimeScaleTween.current = gsap.to(timeline.current, {
-      timeScale: 0.25,
-      duration: 0.4,
-    });
-  };
-
-  const onPointerLeave = () => {
-    if (!timeline.current) return;
-    timelineTimeScaleTween.current?.kill();
-    timelineTimeScaleTween.current = gsap.to(timeline.current, {
-      timeScale: 1,
-      duration: 0.2,
-    });
-  };
 
   const list = useMemo(
     () => (
@@ -99,14 +80,16 @@ const Marquee: FC<Props> = ({ isReversed = false, className }) => {
             <div
               key={index}
               className={twJoin(
-                "relative flex shrink-0 items-center justify-center h-8 md:h-12 w-auto",
+                "relative flex shrink-0 items-center justify-center",
                 isLast && "mr-10"
               )}
+              style={{ height: src.height, width: src.width }}
             >
               <Image
                 src={src}
                 alt="technologies icon"
-                className="h-full w-auto object-contain"
+                height={40}
+                className="object-contain"
               />
             </div>
           );
@@ -119,8 +102,6 @@ const Marquee: FC<Props> = ({ isReversed = false, className }) => {
   return (
     <div
       className={twMerge("w-full max-w-[100vw] select-none overflow-hidden", className)}
-      onPointerEnter={onPointerEnter}
-      onPointerLeave={onPointerLeave}
       style={{
         maskImage:
           "linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%)",
